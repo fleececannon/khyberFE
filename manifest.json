@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Khyber",
+  "version": "1.0",
+  "icons": {
+    "128": "khyber128.png",
+    "32": "khyber32.png",
+    "48": "khyber48.png",
+    "16": "khyber16.png"
+  },
+  "broswer_action": {
+    "default_icon": "khyber16.png",
+    "default_popup": "popup.html"
+  }
+}
