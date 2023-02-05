@@ -8,10 +8,26 @@ document.addEventListener("click", (event) => {
   }
 });
 
+const getHoverColor = () => {
+  // Retrieve the color of a relevant element
+  const relevantElement = document.querySelector(".G-asx T-I-J3 J-J5-Ji");
+  console.log(relevantElement);
+  const computedStyle = window.getComputedStyle(relevantElement);
+  const hoverColor = computedStyle.getPropertyValue("background-color");
+
+  // Return the hover color
+  return hoverColor;
+};
+
 const createSelector = () => {
   // Create a div element
   const selectorContainer = document.createElement("div");
   selectorContainer.style.display = "inline-block";
+
+  //get background color
+  const headerBackgroundColor = window.getComputedStyle(
+    document.querySelector("header")
+  ).backgroundColor;
 
   // Create an image element
   const khyberImage = document.createElement("img");
@@ -29,8 +45,7 @@ const createSelector = () => {
   button.style.marginLeft = "5px";
   button.style.backgroundImage =
     "url(https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/arrow_drop_down_baseline_nv700_20dp.png)";
-  // button.style.backgroundRepeat = "no-repeat";
-  // button.style.backgroundSize = "cover";
+  button.style.backgroundColor = headerBackgroundColor;
 
   // Create options container
   const optionsContainer = document.createElement("div");
