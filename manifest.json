@@ -3,37 +3,32 @@
   "name": "Khyber",
   "version": "1.0",
   "description": "Privacy Power Tools",
-  "permissions": ["activeTab", "scripting", "storage", "tabs"],
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs",
+    "https://mail.google.com/*"
+  ],
   "host_permissions": ["https://mail.google.com/*"],
   "background": {
     "service_worker": "background.js"
   },
-
-
-  "icons": {
-    "128": "/images/khyber128.png",
-    "32": "/images/khyber32.png",
-    "48": "/images/khyber48.png",
-    "16": "/images/khyber16.png"
-  },
-  "background": {
-    "service_worker": "background.js"
-  },
-  
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_end"
+    }
+  ],
   "action": {
     "default_icon": {
       "128": "/images/khyber128.png",
       "32": "/images/khyber32.png",
       "48": "/images/khyber48.png",
       "16": "/images/khyber16.png"
-    }
-  },
-  "commands": {
-    "_execute_action": {
-      "suggested_key": {
-        "default": "Ctrl+B",
-        "mac": "Command+B"
-      }
-    }
+    },
+    "default_title": "Khyber",
+    "default_popup": "popup.html"
   }
 }
