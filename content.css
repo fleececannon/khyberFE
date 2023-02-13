@@ -1,0 +1,30 @@
+.khyberImage {
+  height: 20px;
+  width: 20px;
+}
+
+.dropButton {
+  height: 20px;
+  border: none;
+  width: 20px;
+  margin-left: 5px;
+  background-image: "url(https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/arrow_drop_down_baseline_nv700_20dp.png)";
+  
+}
+
+.ptionsContainer {
+  display: block;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 20%);
+}
+
+.options {
+  padding-bottom: 6px;
+  padding-top: 6px;
+  color: #202124;
+  padding-left: 48px;
+  padding-right: 48px;
+  font-size: 0.875rem;
+  font-family: Roboto;
+}

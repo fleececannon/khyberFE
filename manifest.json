@@ -18,7 +18,14 @@
     {
       "matches": ["https://mail.google.com/*"],
       "js": ["content-script.js"],
-      "run_at": "document_end"
+      "run_at": "document_end",
+      "css": ["content.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content.css"],
+      "matches": ["https://mail.google.com/*"]
     }
   ],
   "action": {

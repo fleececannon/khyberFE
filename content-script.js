@@ -9,16 +9,16 @@ document.addEventListener("click", (event) => {
   }
 });
 
-const getHoverColor = () => {
-  // Retrieve the color of a relevant element
-  const relevantElement = document.querySelector(".aRz J-KU");
-  console.log(relevantElement);
-  const computedStyle = window.getComputedStyle(relevantElement);
-  const hoverColor = computedStyle.getPropertyValue("background-color");
-  console.log(hoverColor);
-  // Return the hover color
-  return hoverColor;
-};
+// const getHoverColor = () => {
+//   // Retrieve the color of a relevant element
+//   const relevantElement = document.querySelector(".aRz J-KU");
+//   console.log(relevantElement);
+//   const computedStyle = window.getComputedStyle(relevantElement);
+//   const hoverColor = computedStyle.getPropertyValue("background-color");
+//   console.log(hoverColor);
+//   // Return the hover color
+//   return hoverColor;
+// };
 
 const createSelector = () => {
   // Create a div element
@@ -34,19 +34,15 @@ const createSelector = () => {
   const khyberImage = document.createElement("img");
   khyberImage.src =
     "https://uploads-ssl.webflow.com/63d84672894ec400b3fa0cfe/63d87d54eea9124df8bf575f_color-p-500.png";
-  khyberImage.style.height = "20px";
-  khyberImage.style.width = "20px";
+  khyberImage.classList.add("khyberImage");
   selectorContainer.appendChild(khyberImage);
 
   // Create a dropdown button
-  const button = document.createElement("button");
-  button.style.height = "20px";
-  button.style.border = "none";
-  button.style.width = "20px";
-  button.style.marginLeft = "5px";
-  button.style.backgroundImage =
+  const dropButton = document.createElement("button");
+  dropButton.classList.add("dropButton");
+  dropButton.style.backgroundImage =
     "url(https://ssl.gstatic.com/ui/v1/icons/mail/gm3/1x/arrow_drop_down_baseline_nv700_20dp.png)";
-  button.style.backgroundColor = headerBackgroundColor;
+  dropButton.style.backgroundColor = headerBackgroundColor;
 
   // Create options container
   const optionsContainer = document.createElement("div");
@@ -54,18 +50,20 @@ const createSelector = () => {
   optionsContainer.style.backgroundColor = "white";
   optionsContainer.style.borderRadius = "4px";
   optionsContainer.style.boxShadow = "0 2px 4px rgb(0 0 0 / 20%)";
+  dropButton.classList.add("optionsContainer");
 
   // Add options to the options container
   const option1 = document.createElement("div");
-  option1.textContent = "Option 1";
-  option1.style.paddingBottom = "6px";
-  option1.style.paddingTop = "6px";
-  option1.style.color = "#202124";
-  option1.style.paddingLeft = "48px";
-  option1.style.paddingRight = "48px";
-  option1.style.font = "roboto";
-  option1.style.fontSize = ".875rem";
-  option1.style.fontFamily = "Roboto";
+  dropButton.classList.add("options");
+  // option1.textContent = "Option 1";
+  // option1.style.paddingBottom = "6px";
+  // option1.style.paddingTop = "6px";
+  // option1.style.color = "#202124";
+  // option1.style.paddingLeft = "48px";
+  // option1.style.paddingRight = "48px";
+  // option1.style.font = "roboto";
+  // option1.style.fontSize = ".875rem";
+  // option1.style.fontFamily = "Roboto";
   optionsContainer.appendChild(option1);
 
   const option2 = document.createElement("div");
@@ -92,10 +90,10 @@ const createSelector = () => {
   option3.style.fontFamily = "Roboto";
   optionsContainer.appendChild(option3);
 
-  selectorContainer.appendChild(button);
+  selectorContainer.appendChild(dropButton);
   selectorContainer.appendChild(optionsContainer);
 
-  button.addEventListener("click", function () {
+  dropButton.addEventListener("click", function () {
     console.log("button click");
     optionsContainer.style.display =
       optionsContainer.style.display === "none" ? "block" : "none";

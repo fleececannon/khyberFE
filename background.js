@@ -10,7 +10,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     console.log("you made here");
     chrome.scripting.executeScript({
       target: { tabId: tab.id },
-      files: ["content-script.js"],
+      files: ["content-script.js", "content.css"],
     });
     console.log("It should have execuited content-script");
   }
